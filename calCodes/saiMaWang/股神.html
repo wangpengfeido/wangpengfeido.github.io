@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>股神</title>
+</head>
+
+<body>
+
+<pre>
+有股神吗？
+有，小赛就是！
+经过严密的计算，小赛买了一支股票，他知道从他买股票的那天开始，股票会有以下变化：第一天不变，以后涨一天，跌一天，涨两天，跌一天，涨三天，跌一天...依此类推。
+为方便计算，假设每次涨和跌皆为1，股票初始单价也为1，请计算买股票的第n天每股股票值多少钱？
+输入
+输入包括多组数据；
+每行输入一个n，1<=n<=10^9 。
+输出
+请输出他每股股票多少钱，对于每组数据，输出一行。
+样例输入
+1
+2
+3
+4
+5
+样例输出
+1
+2
+1
+2
+3
+</pre>
+
+
+
+<script>
+function fn(n){
+	var money=1;
+	var upDays=1;
+	var currentUpDay=1;
+	for(var i=2;i<=n;i++){
+		if(currentUpDay<=upDays){
+			money++;
+			currentUpDay++;
+		}else{
+			money--;
+			upDays++;
+			currentUpDay=1;
+		}
+	}
+	return money;
+}
+
+for(var i=1;i<100;i++){
+	console.log(fn(i));
+}
+
+</script>
+
+
+</body>
+</html>

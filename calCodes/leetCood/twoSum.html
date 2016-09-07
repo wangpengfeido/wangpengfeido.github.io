@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>twoSum</title>
+</head>
+<body>
+    <script>
+        /**
+         * @param {number[]} nums
+         * @param {number} target
+         * @return {number[]}
+         */
+//        var twoSum = function (nums, target) {
+//            var result = [];
+//            for (var i = 0, len = nums.length; i < len; i++) {
+//                for (var j = i + 1; j < len; j++) {
+//                    if (nums[i] + nums[j] === target) {
+//                        result.push(i);
+//                        result.push(j);
+//                        return result;
+//                    }
+//                }
+//            }
+//            return result;
+//        };
+
+        //faster///////////////////////////////////////////////////////
+        var twoSum = function (nums, target) {
+            var result=[];
+            console.log(nums);
+            var sortedNums=nums.sort(function(a,b){return a-b;});
+            for (var i = 0, len = nums.length; i < len; i++) {
+                if(nums[i]+nums[nums.length-1]<target){
+                    continue;
+                }
+                for (var j = i + 1; j < len; j++) {
+                    if (nums[i] + nums[j] === target) {
+                        result.push(i);
+                        result.push(j);
+                        return result;
+                    }
+                }
+            }
+            return result;
+        };
+
+        console.log(twoSum([11, 7, 2, 15], 9));
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>GroupAnagrams</title>
+</head>
+
+<script>
+    /**
+     * @param {string[]} strs
+     * @return {string[][]}
+     */
+    var groupAnagrams = function (strs) {
+        var result = [];
+        var resultObj = {};
+        var resultArrNum = 0;
+        var sortedStr;
+        var arrSortTemp;
+        for (var i = 0, len = strs.length; i < len; i++) {
+            arrSortTemp = strs[i].split("");
+            arrSortTemp.sort();
+            sortedStr = arrSortTemp.join("");
+            if (resultObj[sortedStr] === undefined) {
+                resultObj[sortedStr] = resultArrNum;
+                result.push([]);
+                result[resultObj[sortedStr]].push(strs[i]);
+                resultArrNum++;
+            } else {
+                result[resultObj[sortedStr]].push(strs[i]);
+            }
+        }
+        return result;
+    };
+
+    var arr=["eat", "tea", "tan", "ate", "nat", "bat"];
+    console.log(lengthOfLongestSubstring(arr));
+
+</script>
+
+
+<body>
+</body>
+</html>

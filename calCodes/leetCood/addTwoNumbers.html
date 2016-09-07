@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>addTwoNumbers</title>
+</head>
+
+<body>
+
+<script>
+function ListNode(val) {
+     this.val = val;
+     this.next = null;
+}
+
+var addTwoNumbers = function(l1, l2) {
+    var result=null;
+	var lastNode=null;
+	var sum=0;
+	var temp1=l1,temp2=l2;
+	while(temp1!==null||temp2!==null||sum>0){
+		var n1=temp1?temp1.val:0;
+		var n2=temp2?temp2.val:0;
+		sum=n1+n2+sum;
+		var modem=sum%10;
+		sum=sum>=10?1:0;
+		var newNode=new ListNode(modem);
+		if(lastNode){
+			lastNode.next=newNode;
+			lastNode=newNode;
+		}else{
+			lastNode=newNode;
+			result=lastNode;
+		}
+		temp1=temp1?temp1.next:temp1;
+		temp2=temp2?temp2.next:temp2;
+	}
+	return result;
+};
+
+var node1=new ListNode(2);
+node1.next=new ListNode(4);
+node1.next.next=new ListNode(3);
+var node2=new ListNode(5);
+node2.next=new ListNode(6);
+node2.next.next=new ListNode(4);
+
+node1=new ListNode(5);
+node2=new ListNode(5);
+console.log(addTwoNumbers(node1,node2));
+
+</script>
+
+</body>
+</html>

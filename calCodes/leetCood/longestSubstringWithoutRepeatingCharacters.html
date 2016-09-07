@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>LongestSubstringWithoutRepeatingCharacters</title>
+</head>
+
+<body>
+
+    <script>
+        /**
+         * @param {string} s
+         * @return {number}
+         */
+        var lengthOfLongestSubstring = function(s) {
+            var result="";
+            var temp="";
+            for(var i= 0,len= s.length;i<len;i++){
+                if(temp.indexOf(s.charAt(i))<0){
+                    temp+= s.charAt(i);
+                }else{
+                    if(temp.length>result.length){
+                        result=temp;
+                    }
+                    temp= temp.substr(temp.indexOf(s.charAt(i))+1)+ s.charAt(i);
+                }
+            }
+            if(temp.length>result.length){
+                result=temp;
+            }
+            return result;
+        };
+
+        console.log(lengthOfLongestSubstring("aab"));
+        console.log(lengthOfLongestSubstring("dvdf"));
+        console.log(lengthOfLongestSubstring("abcabcbb"));
+        console.log(lengthOfLongestSubstring("bbbbb"));
+        console.log(lengthOfLongestSubstring("pwwkew"));
+
+    </script>
+
+</body>
+</html>
