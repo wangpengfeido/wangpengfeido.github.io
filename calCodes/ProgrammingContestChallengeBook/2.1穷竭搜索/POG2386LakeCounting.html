@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LakeCounting</title>
+</head>
+<body>
+
+
+    <script>
+        function func(maps) {
+            var result = 0;
+
+            function bfs(i, j) {
+//                if (i<0||j<0||i >= maps.length || j >= maps[0].length) {
+//                    return;
+//                }
+//                if (maps[i][j] == ".") {
+//                    console.log(i,j);
+//                    return;
+//                } else {
+                maps[i][j] = ".";
+                for (var dx = -1; dx <= 1; dx++) {
+                    for (var dy = -1; dy <= 1; dy++) {
+                        var nx = i + dx, ny = j + dy;
+                        if (nx >= 0 && ny >= 0 && nx < maps.length && ny < maps[0].length && maps[nx][ny] == "w") {
+                            bfs(nx, ny);
+                        }
+                    }
+//                    }
+                }
+            }
+
+            for (var i = 0, ilen = maps.length; i < ilen; i++) {
+                for (var j = 0, jlen = maps[0].length; j < jlen; j++) {
+                    if (maps[i][j] == "w") {
+                        bfs(i, j);
+                        result++;
+                    }
+                }
+            }
+            return result;
+        }
+        var maps = [[".", ".", ".", ".", ".", ".", "w"],
+            ["w", ".", ".", ".", ".", "w", "w"],
+            [".", "w", "w", ".", ".", "w", "."],
+            [".", ".", "w", "w", ".", ".", "w"],
+            [".", ".", ".", ".", ".", ".", "w"],
+            [".", ".", ".", ".", ".", ".", "w"],
+            [".", ".", ".", ".", ".", "w", "w"],
+            [".", ".", ".", ".", ".", "w", "w"],
+            [".", ".", "w", ".", ".", ".", "w"],
+            [".", "w", ".", "w", ".", ".", "w"],
+            ["w", ".", "w", ".", "w", ".", "w"],
+            [".", "w", ".", "w", ".", ".", "w"],
+            [".", ".", "w", ".", ".", ".", "w"]];
+        console.log(func(maps));
+
+    </script>
+</body>
+</html>

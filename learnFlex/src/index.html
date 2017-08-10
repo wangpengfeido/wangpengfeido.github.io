@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flex布局演示</title>
+</head>
+<body>
+    <div ng-app="app" ng-controller="ctrl.main">
+        <h1>Flex布局演示</h1>
+        <div>
+            <h3>设置flex容器样式</h3>
+            <div>
+                <label>宽度:</label>
+                <input type="text" ng-model="containerStyle.width" ng-disabled="containerStyle.widthIsAuto">
+                <label> <input type="checkbox" ng-model="containerStyle.widthIsAuto">auto</label>
+            </div>
+            <div>
+                <label>高度:</label>
+                <input type="text" ng-model="containerStyle.height" ng-disabled="containerStyle.heightIsAuto">
+                <label> <input type="checkbox" ng-model="containerStyle.heightIsAuto">auto</label>
+            </div>
+            <div>
+                <label>flexDirection:</label>
+                <label ng-repeat="item in containerStyleOptions.flexDirection">
+                    <input type="radio" ng-model="containerStyle.flexDirection" value="{{item}}">{{item}}
+                </label>
+            </div>
+            <div>
+                <label>flexWrap:</label>
+                <label ng-repeat="item in containerStyleOptions.flexWrap">
+                    <input type="radio" ng-model="containerStyle.flexWrap" value="{{item}}">{{item}}
+                </label>
+            </div>
+            <div>
+                <label>flexFlow:<span>{{containerStyle.flexDirection}}&nbsp;{{containerStyle.flexWrap}}</span></label>
+            </div>
+            <div>
+                <label>justifyContent:</label>
+                <label ng-repeat="item in containerStyleOptions.justifyContent">
+                    <input type="radio" ng-model="containerStyle.justifyContent" value="{{item}}">{{item}}
+                </label>
+            </div>
+            <div>
+                <label>alignItems:</label>
+                <label ng-repeat="item in containerStyleOptions.alignItems">
+                    <input type="radio" ng-model="containerStyle.alignItems" value="{{item}}">{{item}}
+                </label>
+            </div>
+            <div>
+                <label>alignContent:</label>
+                <label ng-repeat="item in containerStyleOptions.alignContent">
+                    <input type="radio" ng-model="containerStyle.alignContent" value="{{item}}">{{item}}
+                </label>
+            </div>
+            <div><b>注：在标准中容器的justifyContent/alignItems/alignContent属性并没有normal值，添加normal值时因为这些属性没有默认值</b></div>
+            <div>
+                <button ng-click="eventHandle.addCell()">增加flxe项目</button>
+            </div>
+        </div>
+        <div style="border: 1px black solid;
+        display: flex;
+        width:{{containerStyle.widthIsAuto?'auto':containerStyle.width}};
+        height:{{containerStyle.heightIsAuto?'auto':containerStyle.height}};
+        flex-direction:{{containerStyle.flexDirection}};
+        flex-wrap: {{containerStyle.flexWrap}};
+        justify-content:{{containerStyle.justifyContent}};
+        align-items: {{containerStyle.alignItems}};
+        align-content: {{containerStyle.alignContent}};">
+            <div ng-repeat="(index,item) in cells track by $index" style="border: 1px deepskyblue solid;font-size: 12px;word-wrap: break-word;overflow: auto;
+            width:{{item.widthIsAuto?'auto':item.width}};
+            height: {{item.heightIsAuto?'auto':item.height}};
+            order:{{item.order}};
+            flex-grow: {{item.flexGrow}};
+            flex-shrink: {{item.flexShrink}};
+            flex-basis: {{item.flexBasisIsAuto?'auto':item.flexBasis}};
+            align-self: {{item.alignSelf}};" >
+                <div>
+                    <label>index:{{index}}</label>
+                    <button ng-click="eventHandle.removeCell(index)">移除该cell</button>
+                </div>
+                <div>
+                    <label>宽度:</label>
+                    <input type="text" ng-model="item.width" ng-disabled="item.widthIsAuto">
+                    <label> <input type="checkbox" ng-model="item.widthIsAuto">auto</label>
+                </div>
+                <div>
+                    <label>高度:</label>
+                    <input type="text" ng-model="item.height" ng-disabled="item.heightIsAuto">
+                    <label> <input type="checkbox" ng-model="item.heightIsAuto">auto</label>
+                </div>
+                <div>
+                    <label>order:</label>
+                    <input type="text" ng-model="item.order">
+                </div>
+                <div>
+                    <label>flexGorw:</label>
+                    <input type="text" ng-model="item.flexGrow">
+                </div>
+                <div>
+                    <label>flexShrink:</label>
+                    <input type="text" ng-model="item.flexShrink">
+                </div>
+                <div>
+                    <label>flexBasis:</label>
+                    <input type="text" ng-model="item.flexBasis" ng-disabled="item.flexBasisIsAuto">
+                    <label> <input type="checkbox" ng-model="item.flexBasisIsAuto">auto</label>
+                </div>
+                <div>
+                    <label>flex:{{item.flexGrow}}&nbsp;{{item.flexShrink}}&nbsp;{{item.flexBasis}}</label>
+                </div>
+                <div>
+                    <label>alignSelf:</label>
+                    <label ng-repeat="checkboxItem in cellStyleOptions.alignSelf">
+                        <input type="radio" ng-model="item.alignSelf" value="{{checkboxItem}}">{{checkboxItem}}
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

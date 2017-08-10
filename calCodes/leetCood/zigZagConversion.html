@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ZigZag Conversion</title>
+</head>
+<body>
+    <script>
+        /**
+         * @param {string} s
+         * @param {number} numRows
+         * @return {string}
+         */
+        var convert = function(s, numRows) {
+            if(numRows==1){
+                return s;
+            }
+            var arrTemp=[];
+            for(var i= 0,len=numRows;i<len;i++){
+                arrTemp.push([]);
+            }
+            var dividend=numRows+numRows-2;
+            var modulus=0;
+            for(var i= 0,len= s.length;i<len;i++){
+                modulus=i%dividend;
+                modulus=modulus>=numRows?dividend-modulus:modulus;
+                arrTemp[modulus].push(s[i]);
+            }
+            var result="";
+            for(var i= 0,len=arrTemp.length;i<len;i++){
+                result += arrTemp[i].join("");
+            }
+            return result;
+        };
+
+        console.log(convert("PAYPALISHIRING", 1));
+        console.log(convert("PAYPALISHIRING", 2));
+        console.log(convert("PAYPALISHIRING", 3));
+        console.log(convert("PAYPALISHIRING", 4));
+        console.log(convert("A", 1));
+
+    </script>
+</body>
+</html>

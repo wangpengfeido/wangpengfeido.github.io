@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>部分和问题</title>
+</head>
+<body>
+
+    <script>
+        function fn(a,k){
+            function dfs(i,sum){
+                if(i== a.length){
+                    return sum==k;
+                }
+                if(dfs(i+1,sum)){
+                    return true;
+                }
+                if(dfs(i+1,sum+a[i])){
+                    return true;
+                }
+                return false;
+            }
+            return dfs(0,0);
+        }
+
+        console.log(fn([1,2,4,7],13));
+        console.log(fn([1,2,4,7],15));
+    </script>
+
+</body>
+</html>

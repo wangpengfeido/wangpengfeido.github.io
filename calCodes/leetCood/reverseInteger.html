@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Reverse Integer</title>
+</head>
+<body>
+<script>
+    /**
+     * @param {number} x
+     * @return {number}
+     */
+
+//    var reverse = function(x) {
+//        var isNegative=x<0?true:false;
+//        var numAbs=Math.abs(x);
+//        var reversedAbs=parseInt(numAbs.toString().split("").reverse().join(""));
+//        var result=isNegative?-reversedAbs:reversedAbs;
+//        return result;
+//    };
+
+    var reverse = function (x) {
+        var isNegative = x < 0 ? true : false;
+        var numAbs =Math.abs(x);
+        var result=0;
+        while(numAbs>=1){
+            var model=numAbs%10;
+            result=result*10+model;
+            numAbs=parseInt(numAbs/10);
+        }
+        result=isNegative?-result:result;
+        return result;
+    };
+
+
+    console.log(reverse(123));
+    console.log(reverse(-123));
+    console.log(reverse("1534236469"));
+//    console.log(parseInt("9646324351"));
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Longest Palindromic Substring</title>
+</head>
+<body>
+    <script>
+        /**
+         * @param {string} s
+         * @return {string}
+         */
+        var longestPalindrome = function(s) {
+            var result="";
+            for(var i= 0,len= s.length;i<len;i++){
+                var temp=s[i];
+                for(var j= 1;i-j>=0&&i+j<len;j++){
+                    if(s[i-j]===s[i+j]){
+                        temp=s[i-j]+temp+s[i+j];
+                    }else {
+                        break;
+                    }
+                }
+                if(temp.length>result.length){
+                    result=temp;
+                }
+                var temp="";
+                for(var j= 0,k=1;i-j>=0&&i+k<len;j++,k++){
+                    if(s[i-j]===s[i+k]){
+                        temp=s[i-j]+temp+s[i+k];
+                    }else {
+                        break;
+                    }
+                }
+                if(temp.length>result.length){
+                    result=temp;
+                }
+            }
+            return result;
+        };
+        console.log(longestPalindrome("sadfkvjiasdsahruasdffdsaihiwh"));
+
+    </script>
+</body>
+</html>
