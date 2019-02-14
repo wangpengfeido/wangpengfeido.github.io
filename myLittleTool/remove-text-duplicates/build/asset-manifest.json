@@ -1,13 +1,13 @@
 {
-  "main.css": "/static/css/main.707622dd.chunk.css",
-  "main.js": "/static/js/main.aff60d00.chunk.js",
-  "main.js.map": "/static/js/main.aff60d00.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.fdfcfda2.js",
-  "runtime~main.js.map": "/static/js/runtime~main.fdfcfda2.js.map",
-  "static/js/2.6e96b77b.chunk.js": "/static/js/2.6e96b77b.chunk.js",
-  "static/js/2.6e96b77b.chunk.js.map": "/static/js/2.6e96b77b.chunk.js.map",
-  "index.html": "/index.html",
-  "precache-manifest.f6263c4802031c9199fa2b2b81c46276.js": "/precache-manifest.f6263c4802031c9199fa2b2b81c46276.js",
-  "service-worker.js": "/service-worker.js",
-  "static/css/main.707622dd.chunk.css.map": "/static/css/main.707622dd.chunk.css.map"
+  "main.css": "/myLittleTool/remove-text-duplicates/build/static/css/main.707622dd.chunk.css",
+  "main.js": "/myLittleTool/remove-text-duplicates/build/static/js/main.860a90a9.chunk.js",
+  "main.js.map": "/myLittleTool/remove-text-duplicates/build/static/js/main.860a90a9.chunk.js.map",
+  "runtime~main.js": "/myLittleTool/remove-text-duplicates/build/static/js/runtime~main.58ccbd4d.js",
+  "runtime~main.js.map": "/myLittleTool/remove-text-duplicates/build/static/js/runtime~main.58ccbd4d.js.map",
+  "static/js/2.6e96b77b.chunk.js": "/myLittleTool/remove-text-duplicates/build/static/js/2.6e96b77b.chunk.js",
+  "static/js/2.6e96b77b.chunk.js.map": "/myLittleTool/remove-text-duplicates/build/static/js/2.6e96b77b.chunk.js.map",
+  "index.html": "/myLittleTool/remove-text-duplicates/build/index.html",
+  "precache-manifest.a3066a141faa97d9184a8237dff9fc54.js": "/myLittleTool/remove-text-duplicates/build/precache-manifest.a3066a141faa97d9184a8237dff9fc54.js",
+  "service-worker.js": "/myLittleTool/remove-text-duplicates/build/service-worker.js",
+  "static/css/main.707622dd.chunk.css.map": "/myLittleTool/remove-text-duplicates/build/static/css/main.707622dd.chunk.css.map"
 }

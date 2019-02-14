@@ -2,6 +2,7 @@
   "name": "remove-text-duplicates",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/myLittleTool/remove-text-duplicates/build",
   "dependencies": {
     "node-sass": "^4.11.0",
     "react": "^16.8.1",
