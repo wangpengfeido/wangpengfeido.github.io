@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 
+import {MainPage} from "./components/main-page/main-page";
+
 class App extends Component {
   constructor() {
     super();
@@ -11,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        asdf
+        <MainPage/>
       </div>
     );
   }
