@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/myLittleTool/remove-text-duplicates/build/precache-manifest.a3066a141faa97d9184a8237dff9fc54.js"
+  "/myLittleTool/remove-text-duplicates/build/precache-manifest.201ffd7fd742b2a3f47883ba6d1e87ce.js"
 );
 
 workbox.clientsClaim();

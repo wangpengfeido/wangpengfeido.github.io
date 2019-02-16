@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="./index.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div id="app">
+    <div class="main">
+        <div class="graph">
+            <div class="box"></div>
+        </div>
+        <div class="configs">
+            <div class="config-box">
+                <div>translateX:<input v-model="translateX">px</div>
+                <div>translateY:<input v-model="translateY">px</div>
+                <div>scaleX:<input v-model="scaleX">°</div>
+                <div>scaleY:<input v-model="scaleY">°</div>
+                <div>rotate:<input v-model="rotate">deg</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="./index.js"></script>
+</body>
+</html>

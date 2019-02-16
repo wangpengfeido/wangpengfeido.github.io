@@ -1,5 +1,10 @@
 .main-page {
   padding: 20px;
+  .advance-options {
+    border: 1px solid black;
+    margin-top: 10px;
+    padding:10px;
+  }
   .content {
     display: flex;
     .content__source, .content__result {

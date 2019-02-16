@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "/myLittleTool/remove-text-duplicates/build",
   "dependencies": {
+    "lodash": "^4.17.11",
     "node-sass": "^4.11.0",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
