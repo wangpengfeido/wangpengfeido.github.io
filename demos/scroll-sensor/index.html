@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Scroll Sensor Demo</title>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+      }
+      .test {
+        width: 100%;
+        height: 100%;
+        display: flex;
+      }
+      .scroll-sensor {
+        width: 200px;
+        height: 500px;
+        background-color: skyblue;
+        user-select: none;
+      }
+      .content {
+        width: 0;
+        flex-grow: 1;
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="test">
+      <div class="content"></div>
+      <div class="scroll-sensor">scroll,drag,or touch here</div>
+    </div>
+
+    <script src="https://unpkg.com/scroll-sensor@latest/dist/scroll-sensor.js"></script>
+    <script>
+      let content = '';
+      for (let i = 0; i < 1000; i++) {
+        const color1 = `#${parseInt(Math.random() * 16777216).toString(16)}`;
+        const color2 = `#${parseInt(Math.random() * 16777216).toString(16)}`;
+        content += `<div style="background:linear-gradient(to right, ${color1} , ${color2});width:2000px;">hello</div>`;
+      }
+      document.querySelector('.content').innerHTML = content;
+    </script>
+    <script>
+      const dom_content = document.querySelector('.content');
+      const scrollSensor = new ScrollSensor({
+        element: document.querySelector('.scroll-sensor'),
+        options: {
+          maxScrollLeft: dom_content.scrollWidth - dom_content.clientWidth,
+          maxScrollTop: dom_content.scrollHeight - dom_content.clientHeight,
+          mouseWheelInertiaXDeceleration: 5000,
+          mouseWheelInertiaYDeceleration: 5000,
+          mouseMoveInertiaXDeceleration: 5000,
+          mouseMoveInertiaYDeceleration: 5000,
+          touchInertiaXDeceleration: 5000,
+          touchInertiaYDeceleration: 5000,
+        },
+      });
+      scrollSensor.on('scroll', event => {
+        console.log(event);
+        dom_content.scrollTop = event.scrollTop;
+        dom_content.scrollLeft = event.scrollLeft;
+      });
+    </script>
+  </body>
+</html>
